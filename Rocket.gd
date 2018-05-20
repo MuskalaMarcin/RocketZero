@@ -1,22 +1,19 @@
-extends Node2D
+extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const SPEED = 150
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	set_physics_process(true)
 
-func _input(event):
-	if event.is_action_pressed("ui_down"):
-		$RocketBody.rotate(0.5)
-		$RocketBody.move_local_y(10);
-	if event.is_action_pressed("ui_up"):
-		$RocketBody.move_local_y(-10);
-		$RocketBody.rotate(-0.5)
-	if event.is_action_released("ui_up"):
-		$RocketBody.rotate(0.5)
-	if event.is_action_released("ui_down"):
-		$RocketBody.rotate(-0.5)
+func _physics_process(delta):
+	var direction = Vector2()
+	if Input.is_action_pressed("ui_down"):
+		direction.y += SPEED
+	if Input.is_action_pressed("ui_up"):
+		direction.y += -SPEED
+	if Input.is_action_pressed("ui_left"):
+		direction.x += -SPEED
+	if Input.is_action_pressed("ui_right"):
+		direction.x += SPEED
+
+	set_position(self.position + direction.normalized() * SPEED * delta)
