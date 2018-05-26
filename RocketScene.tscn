@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Rocket.gd" type="Script" id=1]
-[ext_resource path="res://images/rocket.png" type="Texture" id=2]
+[ext_resource path="res://images/flame_small.png" type="Texture" id=2]
+[ext_resource path="res://images/flame_small_2.png" type="Texture" id=3]
+[ext_resource path="res://images/flame_small_3.png" type="Texture" id=4]
+[ext_resource path="res://images/flame_small_4.png" type="Texture" id=5]
+[ext_resource path="res://images/rocket.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -9,7 +13,17 @@ custom_solver_bias = 0.0
 radius = 9.9371
 height = 20.0
 
-[sub_resource type="ImageTexture" id=2]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ImageTexture" id=3]
 
 flags = 7
 storage = 0
@@ -19,7 +33,7 @@ size = Vector2( 0, 0 )
 
 [node name="Node2D" type="Node2D" index="0"]
 
-position = Vector2( 99.5592, 320.588 )
+position = Vector2( 115.738, 299.312 )
 scale = Vector2( 1.87463, 1.88916 )
 
 [node name="Rocket" type="KinematicBody2D" parent="." index="0"]
@@ -39,12 +53,33 @@ rotation = 1.572
 scale = Vector2( 1.8756, 1.72462 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="Rocket" index="1"]
+[node name="flame_big" type="AnimatedSprite" parent="Rocket" index="1"]
+
+visible = false
+position = Vector2( -40.6354, -0.75383 )
+scale = Vector2( 0.113777, 0.113777 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 1
+playing = true
+_sections_unfolded = [ "Visibility" ]
+
+[node name="flame_small" type="AnimatedSprite" parent="Rocket" index="2"]
+
+position = Vector2( -36.6009, -0.15506 )
+scale = Vector2( 0.0784136, 0.0784136 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 1
+playing = true
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="Rocket" index="3"]
 
 position = Vector2( 0.404304, -0.322137 )
 scale = Vector2( 0.117836, 0.108507 )
-texture = ExtResource( 2 )
-normal_map = SubResource( 2 )
+texture = ExtResource( 6 )
+normal_map = SubResource( 3 )
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
 
 
