@@ -3,7 +3,7 @@
 [ext_resource path="res://Rocket.gd" type="Script" id=1]
 [ext_resource path="res://images/rocket.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 9.9371
@@ -19,12 +19,11 @@ size = Vector2( 0, 0 )
 
 [node name="Node2D" type="Node2D" index="0"]
 
-position = Vector2( 77.7439, 312.355 )
-scale = Vector2( 2.24998, 1.42165 )
+position = Vector2( 99.5592, 320.588 )
+scale = Vector2( 1.87463, 1.88916 )
 
 [node name="Rocket" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 0.668938, -0.2751 )
 scale = Vector2( 1.0209, 0.991403 )
 input_pickable = false
 collision_layer = 1
@@ -35,17 +34,17 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocket" index="0"]
 
-position = Vector2( -0.815341, -0.169779 )
+position = Vector2( -0.81516, -0.319969 )
 rotation = 1.572
-scale = Vector2( 3.25753, 1.72462 )
-shape = SubResource( 3 )
+scale = Vector2( 1.8756, 1.72462 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Rocket" index="1"]
 
-position = Vector2( 0.404304, -0.169464 )
-scale = Vector2( 0.117836, 0.185209 )
+position = Vector2( 0.404304, -0.322137 )
+scale = Vector2( 0.117836, 0.108507 )
 texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
-_sections_unfolded = [ "Material", "Region" ]
+_sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
 
 
