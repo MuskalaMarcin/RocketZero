@@ -4,16 +4,13 @@
 [ext_resource path="res://RocketScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://RocksScene.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="BackgroundScene" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 704.495, 404.847 )
-scale = Vector2( 1.37335, 1.00644 )
+position = Vector2( 0, -3 )
 
 [node name="RocketScene" parent="." index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 139.242, 383.927 )
 
 [node name="RocksScene" parent="." index="2" instance=ExtResource( 3 )]
 

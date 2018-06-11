@@ -7,6 +7,7 @@ const MAX_Y = 180
 
 func _ready():
 	set_physics_process(true)
+	get_child(4).connect("body_entered", self, "_collision");
 	
 func showBigFlame():
 	get_child(1).show()
@@ -44,3 +45,7 @@ func _physics_process(delta):
 		self.rotation = 0
 
 	set_position(self.position + direction.normalized() * SPEED * delta)
+	
+func _collision(t):
+	#TODO collision animation code goes here
+	print("Collision!");
