@@ -3,7 +3,7 @@ extends KinematicBody2D
 const SPEED = 150
 const ROT = 0.6
 const MAX_ROT = 0.4
-const MAX_Y = 140
+const MAX_Y = 180
 
 func _ready():
 	set_physics_process(true)
