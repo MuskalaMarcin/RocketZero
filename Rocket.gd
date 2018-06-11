@@ -46,6 +46,7 @@ func _physics_process(delta):
 
 	set_position(self.position + direction.normalized() * SPEED * delta)
 	
-func _collision(t):
+func _collision(collidedObject):
 	#TODO collision animation code goes here
-	print("Collision!");
+	if (collidedObject.is_class("RigidBody2D")):
+		print("Collision!");
