@@ -60,7 +60,7 @@ position = Vector2( -40.6354, -0.75383 )
 scale = Vector2( 0.113777, 0.113777 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -70,7 +70,7 @@ position = Vector2( -36.6009, -0.15506 )
 scale = Vector2( 0.0784136, 0.0784136 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
