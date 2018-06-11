@@ -2,7 +2,6 @@ extends Node2D
 
 var _timer = null;
 var _rock_generation_interval = 0.5; #start interval in seconds
-var _previous = "top";
 
 func _ready():
 	_start_rock_generator_job();
@@ -20,11 +19,6 @@ func _generate_new_rock():
 	var rock = rock_scene.instance();
 	if (randi() % 2 == 0):
 		rock.init("bottom");
-		#_previous = "bottom";
 	else:
 		rock.init("top");
-		#_previous = "top";
-		
-	#rock.init("top");
-	#rock.init("bottom");	
 	add_child(rock);

@@ -10,8 +10,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 9.9371
-height = 20.0
+radius = 10.0
+height = 23.5077
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -44,7 +44,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Collision", "Visibility", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocket" index="0"]
 
@@ -60,7 +60,7 @@ position = Vector2( -40.6354, -0.75383 )
 scale = Vector2( 0.113777, 0.113777 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -70,7 +70,7 @@ position = Vector2( -36.6009, -0.15506 )
 scale = Vector2( 0.0784136, 0.0784136 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -81,5 +81,22 @@ scale = Vector2( 0.117836, 0.108507 )
 texture = ExtResource( 6 )
 normal_map = SubResource( 3 )
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="Rocket" index="4"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rocket/Area2D" index="0"]
+
+position = Vector2( -0.815159, -0.319977 )
+rotation = 1.572
+scale = Vector2( 1.8756, 1.72462 )
+shape = SubResource( 1 )
 
 
