@@ -1,45 +1,17 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://RocketScene.tscn" type="PackedScene" id=1]
-[ext_resource path="res://RocksScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://BackgroundScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BackgroundScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://RocketScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://RocksScene.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
-[node name="RocketScene" parent="." index="0" instance=ExtResource( 1 )]
+[node name="BackgroundScene" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( -138.262, 363.312 )
+position = Vector2( 0, -3 )
 
-[node name="RocksScene" parent="." index="1" instance=ExtResource( 2 )]
+[node name="RocketScene" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 502.8, 43 )
-_sections_unfolded = [ "Pause", "Transform" ]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
-
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = false
-_sections_unfolded = [ "Scroll" ]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
-
-motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1678, 0 )
-_sections_unfolded = [ "Motion", "Transform", "Z Index" ]
-
-[node name="BackgroundScene" parent="ParallaxBackground/ParallaxLayer" index="0" instance=ExtResource( 3 )]
-
-position = Vector2( 19.9086, 364.482 )
-scale = Vector2( 1.63885, 0.850512 )
+[node name="RocksScene" parent="." index="2" instance=ExtResource( 3 )]
 
 

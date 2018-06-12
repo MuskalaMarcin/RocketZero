@@ -31,15 +31,6 @@ func _physics_process(delta):
 		else:
 			hideBigFlame()
 			self.rotation = 0
-	if Input.is_action_pressed("ui_right"):
-		if self.position.y < MAX_Y:
-			showBigFlame()
-			if self.rotation < MAX_ROT:
-				self.rotation += ROT * delta
-			direction.x += SPEED
-		else:
-			hideBigFlame()
-			self.rotation = 0
 	if Input.is_action_pressed("ui_up"):
 		if self.position.y > -MAX_Y:
 			showBigFlame()
