@@ -15,17 +15,21 @@ func _generate_rock_from_top():
 	_generateRock(-300, 10.0);
 	
 func _generate_rock_from_bottom():
-	_generateRock(800, -10.0);
+	_generateRock(1000, -10.0);
 
 func _generateRock(yPosition, gravityScale):
 	var sprite = Sprite.new();
 	var rockImage = load(_rock_img);
 	sprite.set_texture(rockImage);
-	sprite.set_scale(Vector2(0.1, 0.1));
+	var rockSize = _getRockSize();
+	sprite.set_scale(Vector2(rockSize, rockSize));
 	add_child(sprite);
-	self.position.x = rand_range(0, 500);
+	self.position.x = rand_range(900, 1100);
 	self.position.y = yPosition;
 	self.gravity_scale = gravityScale;
 	self.contact_monitor = true;
 	self.contacts_reported = 5;
-	self.linear_velocity = Vector2(-300, 0);
+	self.linear_velocity = Vector2(-150, 0);
+
+func _getRockSize():
+	return (rand_range(1,15))/100;

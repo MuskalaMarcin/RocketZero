@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 150
+const SPEED = 250
 const ROT = 0.6
 const MAX_ROT = 0.4
 const MAX_Y = 180
@@ -49,4 +49,4 @@ func _physics_process(delta):
 func _collision(collidedObject):
 	#TODO collision animation code goes here
 	if (collidedObject.is_class("RigidBody2D")):
-		print("Collision!");
+		pass;
