@@ -22,6 +22,26 @@ func _physics_process(delta):
 	var flameBig = get_child(1)
 	var flameSmall = get_child(2)
 	
+	if Input.is_action_pressed("ui_right"):
+		if self.position.y < MAX_Y:
+			showBigFlame()
+			if self.rotation < MAX_ROT:
+				self.rotation += ROT * delta
+			direction.x += SPEED
+		else:
+			hideBigFlame()
+			self.rotation = 0
+			
+	if Input.is_action_pressed("ui_left"):
+		if self.position.y < MAX_Y:
+			showBigFlame()
+			if self.rotation < MAX_ROT:
+				self.rotation += ROT * delta
+			direction.y -= -SPEED
+		else:
+			hideBigFlame()
+			self.rotation = 0
+	
 	if Input.is_action_pressed("ui_down"):
 		if self.position.y < MAX_Y:
 			showBigFlame()
