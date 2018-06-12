@@ -5,9 +5,15 @@ const ROT = 0.6
 const MAX_ROT = 0.4
 const MAX_Y = 180
 
+signal fuel_update
+
+func _updateFuelValue(value):
+	emit_signal("fuel_update", value);
+
 func _ready():
 	set_physics_process(true)
 	get_child(4).connect("body_entered", self, "_collision");
+	_updateFuelValue(100);
 	
 func showBigFlame():
 	get_child(1).show()

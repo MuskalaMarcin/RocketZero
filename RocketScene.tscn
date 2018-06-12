@@ -31,7 +31,7 @@ lossy_quality = 0.7
 flags = 7
 size = Vector2( 0, 0 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 position = Vector2( 115.738, 299.312 )
 scale = Vector2( 1.87463, 1.88916 )
