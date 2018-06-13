@@ -31,7 +31,7 @@ lossy_quality = 0.7
 flags = 7
 size = Vector2( 0, 0 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 position = Vector2( 35.738, 379.312 )
 scale = Vector2( 1.87463, 1.88916 )
@@ -61,6 +61,7 @@ position = Vector2( -40.6354, -0.75383 )
 scale = Vector2( 0.113777, 0.113777 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -70,6 +71,7 @@ position = Vector2( -36.6009, -0.15506 )
 scale = Vector2( 0.0784136, 0.0784136 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -83,14 +85,15 @@ _sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="Rocket" index="4"]
 
+position = Vector2( 304.702, 1.57256 )
 anchor_mode = 1
 rotating = false
 current = true
 zoom = Vector2( 1, 1 )
 limit_left = -10000000
-limit_top = -10000000
+limit_top = 0
 limit_right = 10000000
-limit_bottom = 10000000
+limit_bottom = 0
 limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -105,6 +108,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit" ]
 
 [node name="Area2D" type="Area2D" parent="Rocket" index="5"]
 

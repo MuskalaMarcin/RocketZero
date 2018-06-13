@@ -6,7 +6,7 @@
 [ext_resource path="res://TimerScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FuelGaugeScene.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 z_as_relative = false
 _sections_unfolded = [ "Audio Bus", "Collision", "Transform", "Visibility", "Z Index" ]
@@ -35,21 +35,21 @@ _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index
 
 [node name="BackgroundScene" parent="ParallaxBackground/ParallaxLayer" index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 686.825, 389.026 )
+position = Vector2( 1121.14, 382.088 )
 scale = Vector2( 1.33198, 0.855498 )
 region_enabled = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="RocketScene" parent="." index="1" instance=ExtResource( 2 )]
 
+position = Vector2( 101.809, 381.224 )
 z_as_relative = false
-_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="RocksScene" parent="." index="2" instance=ExtResource( 3 )]
 
 [node name="TimerScene" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 13.6523, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="FuelGauge" parent="." index="4" instance=ExtResource( 5 )]
 
