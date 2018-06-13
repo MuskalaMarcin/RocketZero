@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/starjedifont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://images/clock_icon.png" type="Texture" id=3]
 
-[node name="TimerMainNode" type="Node2D" index="0"]
+[node name="TimerMainNode" type="Node2D"]
 
 position = Vector2( 13.6523, 0 )
 script = ExtResource( 1 )

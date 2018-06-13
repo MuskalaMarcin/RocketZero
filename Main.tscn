@@ -8,15 +8,48 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="BackgroundScene" parent="." index="0" instance=ExtResource( 1 )]
+z_as_relative = false
+_sections_unfolded = [ "Audio Bus", "Collision", "Transform", "Visibility", "Z Index" ]
 
-position = Vector2( 0, -3 )
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1678, 0 )
+_sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index" ]
+
+[node name="BackgroundScene" parent="ParallaxBackground/ParallaxLayer" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 686.825, 389.026 )
+scale = Vector2( 1.33198, 0.855498 )
+region_enabled = false
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="RocketScene" parent="." index="1" instance=ExtResource( 2 )]
+
+z_as_relative = false
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="RocksScene" parent="." index="2" instance=ExtResource( 3 )]
 
 [node name="TimerScene" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 13.6523, 0 )
 
 [node name="FuelGauge" parent="." index="4" instance=ExtResource( 5 )]
 
