@@ -3,7 +3,7 @@ extends KinematicBody2D
 const SPEED = 250
 const ROT = 0.6
 const MAX_ROT = 0.4
-const MAX_Y = 180
+const MAX_Y = 100
 
 signal fuel_update
 
@@ -27,6 +27,7 @@ func _physics_process(delta):
 	var direction = Vector2()
 	var flameBig = get_child(1)
 	var flameSmall = get_child(2)
+	var screensize = get_viewport_rect().size
 	
 	if Input.is_action_pressed("ui_down"):
 		if self.position.y < MAX_Y:
@@ -49,6 +50,9 @@ func _physics_process(delta):
 	if Input.is_action_just_released("ui_down") or Input.is_action_just_released("ui_up"):
 		hideBigFlame()
 		self.rotation = 0
+	if Input.is_action_pressed("ui_right"):
+			showBigFlame()
+			direction.x += SPEED
 
 	set_position(self.position + direction.normalized() * SPEED * delta)
 	
