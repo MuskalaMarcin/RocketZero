@@ -6,6 +6,7 @@ func _ready():
 	pass;
 	
 func init(direction):
+	randomize()
 	if (direction == "bottom"):
 		_generate_rock_from_bottom();
 	elif (direction == "top"):

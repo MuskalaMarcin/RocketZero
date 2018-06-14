@@ -1,17 +1,15 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
-const FUEL_ADDED = 20
-const FUEL_CONSUMPTION = 0.4
+const FUEL_ADDED = 40
+const FUEL_CONSUMPTION = 2
 var previousFuel
 var currentFuel
 var fuel
 
 func addFuel():
-	currentFuel += FUEL_ADDED
+	fuel += FUEL_ADDED
+	if (fuel > 100):
+		fuel = 100
 
 func _updateFuelGaugeValue():
 	currentFuel = int(round(fuel))
@@ -26,8 +24,8 @@ func _ready():
 	
 func _physics_process(delta):
 	fuel -= delta * FUEL_CONSUMPTION
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down"):
 		fuel -= delta * FUEL_CONSUMPTION * 1.5
 	_updateFuelGaugeValue()
 	if(fuel < 0):
-		print("TODO koniec paliwa")
+		print("TODO koniec paliwa koniec gry")

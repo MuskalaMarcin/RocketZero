@@ -24,6 +24,7 @@ func _start_rock_generator_job():
 	_rock_timer.start();
 
 func _generate_new_rock():
+	randomize()
 	_increase_level_if_required();
 	var rock_scene = load("res://Rock.tscn");
 	var rock = rock_scene.instance();

@@ -56,4 +56,4 @@ func _physics_process(delta):
 func _collision(collidedObject):
 	#TODO collision animation code goes here
 	if (collidedObject.is_class("RigidBody2D")):
-		pass;
+		print("kolizja koniec gry")
