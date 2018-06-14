@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://BackgroundScene.tscn" type="PackedScene" id=1]
-[ext_resource path="res://RocketScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://RocksScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MovingObjects.gd" type="Script" id=2]
+[ext_resource path="res://RocketScene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TimerScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FuelGaugeScene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RocksScene.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -40,17 +41,47 @@ scale = Vector2( 1.33198, 0.855498 )
 region_enabled = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
-[node name="RocketScene" parent="." index="1" instance=ExtResource( 2 )]
+[node name="MovingObjects" type="Node2D" parent="." index="1"]
+
+script = ExtResource( 2 )
+
+[node name="RocketScene" parent="MovingObjects" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 101.809, 381.224 )
 z_as_relative = false
 
-[node name="RocksScene" parent="." index="2" instance=ExtResource( 3 )]
-
-[node name="TimerScene" parent="." index="3" instance=ExtResource( 4 )]
+[node name="TimerScene" parent="MovingObjects" index="1" instance=ExtResource( 4 )]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="FuelGauge" parent="." index="4" instance=ExtResource( 5 )]
+[node name="FuelGauge" parent="MovingObjects" index="2" instance=ExtResource( 5 )]
+
+[node name="RocksScene" parent="MovingObjects" index="3" instance=ExtResource( 6 )]
+
+[node name="Camera2D" type="Camera2D" parent="MovingObjects" index="4"]
+
+position = Vector2( 681.745, 380.641 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
 
 

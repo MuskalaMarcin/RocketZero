@@ -7,6 +7,8 @@ const MAX_Y = 180
 
 signal fuel_update
 
+var movingObjects
+
 func _updateFuelValue(value):
 	emit_signal("fuel_update", value);
 
@@ -24,8 +26,7 @@ func hideBigFlame():
 	get_child(2).show()
 
 func _physics_process(delta):
-	var direction = Vector2()
-	direction.x += SPEED
+	var directionY = Vector2()
 	var flameBig = get_child(1)
 	var flameSmall = get_child(2)
 	var screensize = get_viewport_rect().size
@@ -35,7 +36,7 @@ func _physics_process(delta):
 			showBigFlame()
 			if self.rotation < MAX_ROT:
 				self.rotation += ROT * delta
-			direction.y += SPEED
+			directionY.y += SPEED
 		else:
 			hideBigFlame()
 			self.rotation = 0
@@ -44,7 +45,7 @@ func _physics_process(delta):
 			showBigFlame()
 			if self.rotation > -MAX_ROT:
 				self.rotation -= ROT * delta
-			direction.y += -SPEED
+			directionY.y += -SPEED
 		else:
 			hideBigFlame()
 			self.rotation = 0
@@ -55,9 +56,8 @@ func _physics_process(delta):
 		hideBigFlame()
 	if Input.is_action_pressed("ui_right"):
 		showBigFlame()
-		direction.x += SPEED * 2
 
-	set_position(self.position + direction.normalized() * SPEED * delta)
+	set_position(self.position + directionY.normalized() * SPEED * delta)
 	
 func _collision(collidedObject):
 	#TODO collision animation code goes here
