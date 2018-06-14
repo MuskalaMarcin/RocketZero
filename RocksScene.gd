@@ -50,21 +50,23 @@ func _generate_new_huge_rock():
 func _increase_level_if_required():
 	if (global_timer.getCurrentTime() % _level_increase_interval_1 == 0 or global_timer.getCurrentTime() % _level_increase_interval_2 == 0):
 		print("level increased");
-		if (_rock_generation_interval > 0.0 && _rock_generation_interval < 0.6):
+		if (_rock_generation_interval > 0.2 && _rock_generation_interval < 0.7):
+#			_level_increase_interval_1 += 20;
+#			_level_increase_interval_2 += 20;
 			_rock_generation_interval -= 0.05;
 			_rock_timer.set_wait_time(_rock_generation_interval);
-		elif (_rock_generation_interval >= 0.5 && _rock_generation_interval < 1.1):
-			_level_increase_interval_1 += 5;
-			_level_increase_interval_2 += 5;
+		elif (_rock_generation_interval >= 0.7 && _rock_generation_interval < 1.1):
+			_level_increase_interval_1 += 7;
+			_level_increase_interval_2 += 7;
 			_rock_generation_interval -= 0.1;
 			_rock_timer.set_wait_time(_rock_generation_interval);
-		elif (_rock_generation_interval >= 1):
+		elif (_rock_generation_interval >= 1.1):
 			_level_increase_interval_1 += 2;
 			_level_increase_interval_2 += 2;
 			_rock_generation_interval -= 0.2;
 			_rock_timer.set_wait_time(_rock_generation_interval);
 			
-		if (_huge_rock_generation_interval > 0.0):
+		if (_huge_rock_generation_interval > 1.5):
 			_huge_rock_generation_interval -= 0.2;
 			_huge_rock_timer.set_wait_time(_huge_rock_generation_interval);	
 	
