@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/starjedifont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://images/fuel-station-pump.png" type="Texture" id=3]
 
-[node name="FuelGaugeMainNode" type="Node2D"]
+[node name="FuelGaugeMainNode" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 

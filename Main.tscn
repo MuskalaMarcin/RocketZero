@@ -7,7 +7,7 @@
 [ext_resource path="res://FuelGaugeScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://RocksScene.tscn" type="PackedScene" id=6]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 z_as_relative = false
 _sections_unfolded = [ "Audio Bus", "Collision", "Transform", "Visibility", "Z Index" ]

@@ -15,7 +15,6 @@ func _process(delta):
 	currentTime = int(round(time))
 	if currentTime != previousTime:
 		_setCurrentTime();
-		emit_signal("time_tick", currentTime);
 	pass
 
 func _setCurrentTime():
