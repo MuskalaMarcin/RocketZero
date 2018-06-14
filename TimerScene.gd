@@ -21,3 +21,6 @@ func _process(delta):
 func _setCurrentTime():
 	previousTime = currentTime;
 	get_node("TimerLabel").set_text(str(currentTime));
+	
+func getCurrentTime():
+	return currentTime;
