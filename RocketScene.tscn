@@ -31,7 +31,7 @@ lossy_quality = 0.7
 flags = 7
 size = Vector2( 0, 0 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 position = Vector2( 35.738, 379.312 )
 scale = Vector2( 1.87463, 1.88916 )
@@ -61,6 +61,7 @@ position = Vector2( -40.6354, -0.75383 )
 scale = Vector2( 0.113777, 0.113777 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -70,6 +71,7 @@ position = Vector2( -36.6009, -0.15506 )
 scale = Vector2( 0.0784136, 0.0784136 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Visibility" ]
 

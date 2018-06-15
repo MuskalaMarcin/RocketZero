@@ -6,6 +6,7 @@ const MAX_ROT = 0.35
 const MAX_Y = 180
 
 var movingObjects
+signal hit
 
 func _ready():
 	set_physics_process(true)
@@ -56,4 +57,4 @@ func _physics_process(delta):
 func _collision(collidedObject):
 	#TODO collision animation code goes here
 	if (collidedObject.is_class("RigidBody2D")):
-		print("kolizja koniec gry")
+		emit_signal("hit")
