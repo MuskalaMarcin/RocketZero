@@ -23,3 +23,6 @@ func _setCurrentTime():
 	
 func getCurrentTime():
 	return currentTime;
+	
+func resetTime():
+	time = 0;

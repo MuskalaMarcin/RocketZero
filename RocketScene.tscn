@@ -39,6 +39,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Rocket" type="KinematicBody2D" parent="." index="0"]
 
+position = Vector2( -0.533439, 0 )
 scale = Vector2( 1.0209, 0.991403 )
 input_pickable = false
 collision_layer = 1
@@ -49,7 +50,7 @@ _sections_unfolded = [ "Collision", "Visibility", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocket" index="0"]
 
-position = Vector2( -0.81516, -0.319969 )
+position = Vector2( -0.815161, 0.213956 )
 rotation = 1.572
 scale = Vector2( 1.8756, 1.72462 )
 shape = SubResource( 1 )
@@ -61,7 +62,7 @@ position = Vector2( -40.6354, -0.75383 )
 scale = Vector2( 0.113777, 0.113777 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -71,7 +72,7 @@ position = Vector2( -36.6009, -0.15506 )
 scale = Vector2( 0.0784136, 0.0784136 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
