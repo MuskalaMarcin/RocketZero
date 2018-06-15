@@ -7,9 +7,6 @@ const MAX_Y = 180
 
 var movingObjects
 
-func start():
-	show()
-
 func _ready():
 	set_physics_process(true)
 	get_child(4).connect("body_entered", self, "_collision");
@@ -57,8 +54,5 @@ func _physics_process(delta):
 	set_position(self.position + directionY.normalized() * SPEED * delta)
 	
 func _collision(collidedObject):
-	#TODO collision animation code goes here
 	if (collidedObject.is_class("RigidBody2D")):
-#		hide()
-		get_node('../../../Home')._on_Rocket_hit()
-#		emit_signal("hit")
+		get_tree().change_scene("res://GameOver.tscn")

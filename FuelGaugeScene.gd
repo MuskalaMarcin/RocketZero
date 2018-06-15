@@ -6,8 +6,6 @@ var previousFuel
 var currentFuel
 var fuel
 
-signal hit
-
 func addFuel():
 	fuel += FUEL_ADDED
 	if (fuel > 100):
@@ -30,7 +28,4 @@ func _physics_process(delta):
 		fuel -= delta * FUEL_CONSUMPTION * 1.5
 	_updateFuelGaugeValue()
 	if(fuel < 0):
-		get_node('../../Home')._on_Rocket_hit()
-		
-func resetFuel():
-	fuel = 100
+		get_tree().change_scene("res://GameOver.tscn")

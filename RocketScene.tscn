@@ -31,7 +31,7 @@ lossy_quality = 0.7
 flags = 7
 size = Vector2( 0, 0 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 position = Vector2( 35.738, 379.312 )
 scale = Vector2( 1.87463, 1.88916 )
@@ -39,7 +39,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Rocket" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( -0.533439, 0 )
 scale = Vector2( 1.0209, 0.991403 )
 input_pickable = false
 collision_layer = 1
@@ -50,7 +49,7 @@ _sections_unfolded = [ "Collision", "Visibility", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocket" index="0"]
 
-position = Vector2( -0.815161, 0.213956 )
+position = Vector2( -0.81516, -0.319969 )
 rotation = 1.572
 scale = Vector2( 1.8756, 1.72462 )
 shape = SubResource( 1 )
